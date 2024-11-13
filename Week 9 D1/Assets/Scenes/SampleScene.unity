@@ -250,6 +250,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &444153091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9148328567788902429, guid: d0ee9ecd775e34846983a62b384b28da, type: 3}
+  m_PrefabInstance: {fileID: 559640998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &513019809
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,12 +360,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148328567788902429, guid: d0ee9ecd775e34846983a62b384b28da, type: 3}
       propertyPath: m_Name
-      value: StarSparrow11
+      value: Player Ship
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9148328567788902429, guid: d0ee9ecd775e34846983a62b384b28da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8484417692784571140}
   m_SourcePrefab: {fileID: 100100000, guid: d0ee9ecd775e34846983a62b384b28da, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -698,6 +706,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8484417692259697319, guid: d0ee9ecd775e34846983a62b384b28da, type: 3}
   m_PrefabInstance: {fileID: 559640998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8484417692784571140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444153091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9300b4635a52d1458c77cbd8e827364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ed0ce244-ba15-487a-8fde-d56977d8e7c6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: afb7a903-75a9-464a-9484-63a032db1ceb
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 2b16a8af-2fd6-402e-83f9-78eda6833ad3
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 8823b223-318d-444d-966b-cebc96178f98
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: eb9770a4-b679-40c8-888c-aaebe2dd9573
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: a734b252-156f-43ef-be60-fcd50a52589d
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    m_Flags: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

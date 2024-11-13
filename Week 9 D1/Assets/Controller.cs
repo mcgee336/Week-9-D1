@@ -1,22 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] InputAction movement;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+     void OnEnable()
+    {
+        movement.Enable();
+    }
+     void OnDisable()
+    {
+        movement.Disable();
+    }
+
     void Update()
     {
-        float horizontalThrow = Input.GetAxis("Horizontal");
+        float horizontalThrow = movement.ReadValue<Vector2>().x;
+        float verticalThrow = movement.ReadValue<Vector2>().y;
+
+        //float horizontalThrow = Input.GetAxis("Horizontal");
         Debug.Log(horizontalThrow);
 
-        float verticalThrow = Input.GetAxis("Vertical");
+        //float verticalThrow = Input.GetAxis("Vertical");
         Debug.Log(verticalThrow);
 
     }
