@@ -6,28 +6,21 @@ using UnityEngine.InputSystem;
 public class Controller : MonoBehaviour
 {
 
-    [SerializeField] InputAction movement;
-
-     void OnEnable()
-    {
-        movement.Enable();
-    }
-     void OnDisable()
-    {
-        movement.Disable();
-    }
+    [SerializeField] float controlSpeed = 10f;
 
     void Update()
     {
-        float xThrow = movement.ReadValue<Vector2>().x;
-        float yThrow = movement.ReadValue<Vector2>().y;
+        float xThrow = Input.GetAxis("Horizontal");
+        float yThrow = Input.GetAxis("Vertical");
 
-        float xOffset = 0.1f;
-        float newXPos = transform.position.x + xOffset;
+        float xOffset = xThrow * Time.deltaTime * controlSpeed;
+        float newXPos = transform.localPosition.x + xOffset;
+       
+        float yOffset = yThrow * Time.deltaTime * controlSpeed;
+        float newYPos = transform.localPosition.y + yOffset;
+      ;
 
         transform.localPosition = new Vector3 
-            (xOffset, 
-            transform.localPosition.y, 
-            transform.localPosition.z);
+            (newXPos,newYPos, transform.localPosition.z);
     }
 }
