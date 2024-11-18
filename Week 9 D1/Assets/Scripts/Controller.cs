@@ -10,7 +10,18 @@ public class Controller : MonoBehaviour
     [SerializeField] float xRange = 10f;
     [SerializeField] float yRange = 7f;
 
-    void Update()
+     void Update()
+    {
+       ProcessTranslation();
+        ProcessRotation();
+    }
+
+    void ProcessRotation()
+    {
+        transform.localRotation = Quaternion.Euler(-30f, 30f, 0f);
+    }
+
+    void ProcessTranslation()
     {
         float xThrow = Input.GetAxis("Horizontal");
         float yThrow = Input.GetAxis("Vertical");
